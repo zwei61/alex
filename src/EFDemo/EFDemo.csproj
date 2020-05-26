@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B295129B-7CFC-453E-92DC-65FCB706990E}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EFDemo</RootNamespace>
+    <AssemblyName>EFDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFDemoDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFDemoDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDemoDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EFDemoDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EFDemoDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_PurchaseOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_RequestProcessStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_ShipmentOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_ShopOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_TaskStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_td_TaskType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tl_Request.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tm_APP.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tm_ISV.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_PurchaseOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_PurchaseOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_PurchaseOrderTradeInfo.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_ShipmentOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_ShipmentOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_ShoppingOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_ShoppingOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_tt_Task.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_PurchaseOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_RequestProcessStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_ShipmentOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_ShopOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_TaskStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vd_TaskType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vl_Request.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vm_APP.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vm_ISV.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vm_Material.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_BillOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_BillOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_MatchingMaterialList.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_MatchingSupplierList.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_PurchaseOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_PurchaseOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_PurchaseOrderTradeInfo.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_PurchaseReturnOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_PurchaseReturnOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_SettlementOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_SettlementOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_ShipmentOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_ShipmentOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_ShoppingOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_ShoppingOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_open_vt_Task.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ta_Biz_InPa.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ta_Inventory.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_BillOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_DeliveryMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_DeliveryOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_InventoryType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_LinkDataType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_MaterialType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ProjectType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_PurchaseStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_PurchaseType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ReturnMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ReturnOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ReviewResult.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ReviewRuleType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_ReviewStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SalesOrderItemStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SalesOrderPurchaseStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SalesOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SettlementOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SupplierType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_SupplyType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_TransFeeSettlementsMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_TransMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_Unit.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_WarehouseIOStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_WarehouseIOType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_td_WarehouseType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tl_log.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_ConsGroupLeader.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_ConstructionTeam.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Designer.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Material.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Operator.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_OperatorRole.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Purview.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_QAManager.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_ReviewRule.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_ReviewRuleItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_ReviewRuleItem_MyExamine.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Supplier.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_SupplyPrice.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_Warehouse.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tm_WarehouseWorker.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ts_Company.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ts_Func.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ts_FuncGroup.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ts_SubFunc.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ttl_ReviewRuleLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ttl_SalesOrderItem_StandardLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_ttl_SalesOrderPurchaseLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_BillOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_BillOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_DeliveryOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_DeliveryOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_DeliveryOrderTransport.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_PurchaseOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_PurchaseOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_ReturnOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_ReturnOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_ReturnOrderTransport.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SalesOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SalesOrderContract.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SalesOrderDelivery.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SalesOrderHouseholder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SalesOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SettlementOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_SettlementOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_WarehouseIO.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_WarehouseIOItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_tt_WarehouseIOTransport.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_va_Biz_InPa.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_va_Inventory.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_BillOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_DeliveryMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_DeliveryOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_InventoryType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_LinkDataType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_MaterialType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ProjectType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_PurchaseStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_PurchaseType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ReturnMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ReturnOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ReviewResult.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ReviewRuleType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_ReviewStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SalesOrderItemStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SalesOrderPurchaseStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SalesOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SettlementOrderStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SupplierType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_SupplyType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_TransFeeSettlementsMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_TransMode.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_Unit.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_WarehouseIOStatus.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_WarehouseIOType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vd_WarehouseType.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_InterfaceFeedback_ConfirmReturnLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_InterfaceFeedback_CustomizedOrderLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_InterfaceFeedBack_DeliveryOrderLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_InterfaceFeedback_LackOfMaterialLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_InterfaceFeedback_RejectReturnLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_log.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vl_log_lite.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_ConsGroupLeader.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_ConstructionTeam.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Designer.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Material.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Operator.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_OperatorRole.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Purview.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_QAManager.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_ReviewRule.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_ReviewRuleItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_ReviewRuleItem_MyExamine.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Supplier.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_SupplyPrice.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_tms_City.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_tms_CityBV.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_Warehouse.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vm_WarehouseWorker.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vs_Company.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vs_Func.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vs_FuncGroup.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vs_SubFunc.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vtl_ReviewRuleLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vtl_SalesOrderPurchaseLog.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_BillOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_BillOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_DeliveryOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_DeliveryOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_DeliveryOrderTransport.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_interface2oms_2_21_SalesOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_interface2oms_2_21_SalesOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_interface2oms_2_24_ReturnOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_interface2oms_2_24_ReturnOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Inventory_Supplier.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_PurchaseOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_PurchaseOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_PurchaseOrderItem_Delivery.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_PurchaseOrderItem_InventoryOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_ConfirmWarehouseIOItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_CustomerPurchaseOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_LessWarehousedFC.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_MaterialAndSupplier.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_SalesOrderInfoAndItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_SalesOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_SalesOrderItemAndSupplierID.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_SelectPurchaseOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Purchase_WarehouseIO.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_ReturnOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_ReturnOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_ReturnOrder_SalesOrderInfo.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_ReturnOrder_SalesOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderContract.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderDelivery.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderHouseholder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderInfo.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SalesOrderReview.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SettlementOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_SettlementOrderItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_Supplier_DeliveryOrder.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_WarehouseIO.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_WarehouseIOItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_wms_Inventory.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_wms_InventoryBatch_from_with_wms_storage.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_wms_InventoryItem.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vt_wms_Inventory_from_with_wms_storage.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="oms_vx_xhelper_sys_Globe.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="wms订单单价获取用.cs">
+      <DependentUpon>EFDemoDB.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <EntityDeploy Include="EFDemoDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EFDemoDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="EFDemoDB.edmx.diagram">
+      <DependentUpon>EFDemoDB.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EFDemoDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EFDemoDB.Context.cs</LastGenOutput>
+      <DependentUpon>EFDemoDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="EFDemoDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EFDemoDB.edmx</DependentUpon>
+      <LastGenOutput>EFDemoDB.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

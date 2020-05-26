@@ -1,0 +1,53 @@
+﻿<Window x:Class="WpfApp1.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="滚动" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.RowSpan="2" Grid.Column="0" x:Name="txtHHName" Content="张三" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Label Grid.Row="0" Grid.Column="1" x:Name="txtContract"  Content="1003175664863"></Label>
+            <Label Grid.Row="1" Grid.Column="1" x:Name="txtAddress"  Content="北京市大兴区旧宫镇 住总万科广场C座11层"></Label>
+            <Button Grid.Column="2" Content="滚动" x:Name="scroll" Click="Scroll_Click"></Button>
+        </Grid>
+        
+            <DataGrid Grid.Row="1" x:Name="orderItem_list" ItemsSource="{Binding Results,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" IsReadOnly="False" AutoGenerateColumns="False" GridLinesVisibility="All"
+                  BorderThickness="1" HorizontalGridLinesBrush="#FFAAA5A5" VerticalGridLinesBrush="#FF9C9999" AlternatingRowBackground="#FFAEF1A7" FontSize="14">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="20">
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Border Height="18" Width="18" CornerRadius="2" Background="White" Padding="0" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"></Border>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Sku" Binding="{Binding SkuNo}" Width="160"></DataGridTextColumn>
+                    <DataGridTextColumn Header="名称" Binding="{Binding SkuName}" Width="300"></DataGridTextColumn>
+                    <DataGridTextColumn Header="数量" Binding="{Binding Amount}" Width="100"></DataGridTextColumn>
+                    <DataGridTextColumn Header="状态" Binding="{Binding StatusName}" Width="120"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        <!--<ScrollViewer HorizontalScrollBarVisibility="Disabled" Grid.Row="1" VerticalScrollBarVisibility="Hidden"  
+                          HorizontalAlignment="Stretch" x:Name="ScrollViewertest">-->
+        <!--<TextBox x:Name="message"></TextBox>-->
+        <!--</ScrollViewer>-->
+    </Grid>
+</Window>
